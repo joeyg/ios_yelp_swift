@@ -23,5 +23,16 @@ DerivedData
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
+<<<<<<< HEAD
 Pods/
 
+=======
+# Pods/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
+>>>>>>> 1dd0fa904adff88640ca5dfab4302f9e18140dbe
