@@ -90,6 +90,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
         if let term = searchBar.text {
             Business.searchWithTerm(term, completion: { (business:[Business]!, error:NSError!) -> Void in
                 self.businesses = business
@@ -99,5 +100,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
 
 }
