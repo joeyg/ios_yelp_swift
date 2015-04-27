@@ -20,6 +20,7 @@
 		D87344841AEDEC7B008F6D64 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87344831AEDEC7B008F6D64 /* BusinessTableViewCell.swift */; };
 		D87344861AEDF503008F6D64 /* SwitchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87344851AEDF503008F6D64 /* SwitchCellTableViewCell.swift */; };
 		D87344881AEE04FE008F6D64 /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87344871AEE04FE008F6D64 /* SortTableViewCell.swift */; };
+		D873448A1AEEC2C5008F6D64 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87344891AEEC2C5008F6D64 /* TextTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D87344831AEDEC7B008F6D64 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessTableViewCell.swift; path = Yelp/Views/BusinessTableViewCell.swift; sourceTree = "<group>"; };
 		D87344851AEDF503008F6D64 /* SwitchCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchCellTableViewCell.swift; path = Yelp/Views/SwitchCellTableViewCell.swift; sourceTree = "<group>"; };
 		D87344871AEE04FE008F6D64 /* SortTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortTableViewCell.swift; path = Yelp/Views/SortTableViewCell.swift; sourceTree = "<group>"; };
+		D87344891AEEC2C5008F6D64 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextTableViewCell.swift; path = Yelp/Views/TextTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				D87344831AEDEC7B008F6D64 /* BusinessTableViewCell.swift */,
 				D87344851AEDF503008F6D64 /* SwitchCellTableViewCell.swift */,
 				D87344871AEE04FE008F6D64 /* SortTableViewCell.swift */,
+				D87344891AEEC2C5008F6D64 /* TextTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D873448A1AEEC2C5008F6D64 /* TextTableViewCell.swift in Sources */,
 				22AAAA9C1AEA1EC300A544AF /* BusinessesViewController.swift in Sources */,
 				22AAAA991AEA0A9700A544AF /* Business.swift in Sources */,
 				D87344861AEDF503008F6D64 /* SwitchCellTableViewCell.swift in Sources */,

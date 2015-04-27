@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="agV-tg-RfX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="agV-tg-RfX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4l6-zS-wc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967" y="206"/>
+            <point key="canvasLocation" x="-515.73333333333335" y="195.01333333333332"/>
         </scene>
         <!--Businesses View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -30,7 +30,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YdU-Xt-u4k">
@@ -112,7 +112,7 @@
                     <navigationItem key="navigationItem" id="BvY-Mj-e6j">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="CgZ-NU-K3i">
                             <connections>
-                                <segue destination="8ja-sP-Nyb" kind="presentation" id="Znu-vy-0zS"/>
+                                <segue destination="8ja-sP-Nyb" kind="modal" id="Znu-vy-0zS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -122,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="212"/>
+            <point key="canvasLocation" x="-108.26666666666667" y="200.69333333333333"/>
         </scene>
         <!--Filters-->
         <scene sceneID="VFn-xQ-yXB">
@@ -133,7 +133,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Rk2-uP-aNf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dBs-P2-ZSp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8p5-Jc-Gkp">
@@ -153,7 +153,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytk-af-H1k">
-                                                    <rect key="frame" x="235" y="8" width="51" height="31"/>
+                                                    <rect key="frame" x="238" y="8" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -169,7 +169,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1hx-LW-yOT">
-                                                    <rect key="frame" x="22" y="8" width="235" height="29"/>
+                                                    <rect key="frame" x="42" y="8" width="235" height="29"/>
                                                     <segments>
                                                         <segment title="Best Match"/>
                                                         <segment title="Distance"/>
@@ -185,10 +185,40 @@
                                             <outlet property="segmentControl" destination="1hx-LW-yOT" id="QVo-be-9fM"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextViewCell" id="qzu-RX-a4h" customClass="TextTableViewCell" customModule="Yelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qzu-RX-a4h" id="0bf-eb-Oom">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance (in meters)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tE-31-Kvk">
+                                                    <rect key="frame" x="28" y="11" width="152" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BW7-bo-che">
+                                                    <rect key="frame" x="202" y="7" width="97" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="editingEnded:" destination="qzu-RX-a4h" eventType="touchUpOutside" id="JQn-tb-aGH"/>
+                                                        <action selector="editingEnded:" destination="qzu-RX-a4h" eventType="editingDidEnd" id="fFA-7Q-wu8"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textView" destination="BW7-bo-che" id="xHL-zc-CQQ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uWo-5R-L9J" appends="YES" id="1V2-Ip-HG9"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Filters" id="6U5-Ft-MbI">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Vzq-1I-JIq">
@@ -207,15 +237,20 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCT-Al-6Vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uWo-5R-L9J">
+                    <connections>
+                        <action selector="onTap:" destination="6UY-dH-1Yw" id="m2C-LW-Wjd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1300" y="218"/>
+            <point key="canvasLocation" x="655" y="206"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="wgH-5a-dNc">
             <objects>
                 <tableViewController id="0xS-wq-mJY" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="soY-9e-jt8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -342,7 +377,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sf-Bl-8Ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="979"/>
+            <point key="canvasLocation" x="848" y="926.78666666666663"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i4T-iJ-Hm8">
@@ -360,7 +395,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYc-98-D7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="218"/>
+            <point key="canvasLocation" x="260.26666666666665" y="206.37333333333333"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
