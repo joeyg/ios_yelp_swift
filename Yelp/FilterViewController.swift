@@ -12,12 +12,14 @@ import UIKit
     optional func filterViewController(filterViewController: FilterViewController, didUpdateFilters filters: [String:AnyObject])
 }
 
-class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwitchCellTableViewCellDelegate {
+class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwitchCellTableViewCellDelegate, SortTableViewCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var categories: [[String:String]]!
     var switchStates: [Int:Bool]!
+    var sort: YelpSortMode = YelpSortMode.BestMatched
+    
     weak var delegate: FilterViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -57,22 +59,49 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
             filters["categories"] = selectedCategories
         }
         
+        filters["sort"] = sort.rawValue ?? YelpSortMode.BestMatched.rawValue
+        
         delegate?.filterViewController?(self, didUpdateFilters: filters)
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        switch section {
+            case 0:
+                return categories.count
+            default:
+                return 1
+        }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("SwitchCell") as! SwitchCellTableViewCell
+        if indexPath.section == 0 {
+            var cell = tableView.dequeueReusableCellWithIdentifier("SwitchCell") as! SwitchCellTableViewCell
         
-        cell.switchLabel.text = categories[indexPath.row]["name"]
-        cell.delegate = self
+            cell.switchLabel.text = categories[indexPath.row]["name"]
+            cell.delegate = self
         
-        cell.onSwitch.on = switchStates[indexPath.row] ?? false
+            cell.onSwitch.on = switchStates[indexPath.row] ?? false
         
-        return cell
+            return cell
+        } else {
+            var cell = tableView.dequeueReusableCellWithIdentifier("SortCell") as! SortTableViewCell
+            cell.delegate = self
+            return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch (section) {
+            case 0:
+                return "Categories"
+            default:
+                return "Sort"
+        }
     }
     
     func switchCellTableViewCell(cell: SwitchCellTableViewCell, didChangedValue: Bool) {
@@ -80,6 +109,9 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switchStates[indexPath.row] = didChangedValue
     }
 
+    func sortTableViewCell(cell:SortTableViewCell, value:YelpSortMode) {
+        sort = value
+    }
 
     func yelpCategories() -> [[String:String]] {
         return [["name": "Afghan", "code": "afghani"],
